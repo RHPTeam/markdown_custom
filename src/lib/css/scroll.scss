@@ -1,28 +1,26 @@
-$background_color_1: #e5e5e5;
-$background_color_2: #b7b7b7;
-$background_color_3: #a1a1a1;
-
-.scroll-style {
-  &::-webkit-scrollbar {
-    width: 6px;
-    background-color: $background_color_1;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $background_color_2;
-    border-radius: 4px;
-    &:hover {
-      background-color: $background_color_3;
+@mixin scrollbar() {
+  &.scroll-style {
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #e5e5e5;
     }
-    &:active {
-      background-color: $background_color_3;
+    &::-webkit-scrollbar-thumb {
+      background-color: #b7b7b7;
+      border-radius: 4px;
+      &:hover {
+        background-color: #a1a1a1;
+      }
+      &:active {
+        background-color: #a1a1a1;
+      }
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: 0 0 0 gray inset;
     }
   }
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: 0 0 0px #808080 inset;
-  }
-}
-.scroll-style-border-radius {
-  &::-webkit-scrollbar {
-    border-bottom-right-radius: 4px;
+  &.scroll-style-border-radius {
+    &::-webkit-scrollbar {
+      border-bottom-right-radius: 4px;
+    }
   }
 }

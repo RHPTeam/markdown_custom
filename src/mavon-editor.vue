@@ -89,7 +89,7 @@
 
 <script>
 // import tomarkdown from './lib/core/to-markdown.js'
-import {autoTextarea} from 'auto-textarea'
+import {autoTextarea} from './dependencies/auto-textarea/index'
 import {keydownListen} from './lib/core/keydown-listen.js'
 import hljsCss from './lib/core/hljs/lang.hljs.css.js'
 import hljsLangs from './lib/core/hljs/lang.hljs.js'
@@ -698,17 +698,19 @@ export default {
     }
 };
 </script>
+
 <style lang="stylus" rel="stylesheet/stylus">
-    /*@import "lib/css/scroll.styl"*/
-    @import "lib/css/mavon-editor.styl"
+@import "lib/css/scroll.styl"
+@import "lib/css/mavon-editor.styl"
 </style>
 
-<style lang="scss">
+<!--<style lang="scss">
+@import "lib/css/mavon-editor.scss";
 @import "lib/css/scroll.scss";
-</style>
+</style>-->
 
 <style lang="css" scoped>
-    .auto-textarea-wrapper {
-        height: 100%;
-    }
+.auto-textarea-wrapper {
+  height: 100%;
+}
 </style>
