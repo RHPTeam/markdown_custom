@@ -1,39 +1,39 @@
 import hljsLangs from '../core/hljs/lang.hljs.js'
-import {
-    loadScript
-} from '../core/extra-function.js'
+import { loadScript } from '../core/extra-function.js'
+
 var markdown_config = {
     html: true,        // Enable HTML tags in source
     xhtmlOut: true,        // Use '/' to close single tags (<br />).
     breaks: true,        // Convert '\n' in paragraphs into <br>
     langPrefix: 'lang-',  // CSS language prefix for fenced blocks. Can be
-    linkify: false,        // 自动识别url
+    linkify: true,        // Automatically identify url
     typographer: true,
     quotes: '“”‘’'
-}
-var markdown = require('markdown-it')(markdown_config);
-// 表情
+};
+
+var markdown = require('../../dependencies/markdown/mardown-it')(markdown_config);
+// Emoji
 var emoji = require('markdown-it-emoji');
-// 下标
-var sub = require('markdown-it-sub')
-// 上标
-var sup = require('markdown-it-sup')
+// Subscript
+var sub = require('markdown-it-sub');
+// Superscript
+var sup = require('markdown-it-sup');
 // <dl/>
-var deflist = require('markdown-it-deflist')
+var deflist = require('markdown-it-deflist');
 // <abbr/>
-var abbr = require('markdown-it-abbr')
+var abbr = require('markdown-it-abbr');
 // footnote
-var footnote = require('markdown-it-footnote')
-// insert 带有下划线 样式 ++ ++
-var insert = require('markdown-it-ins')
+var footnote = require('markdown-it-footnote');
+// Insert with underscore style ++ ++
+var insert = require('markdown-it-ins');
 // mark
-var mark = require('markdown-it-mark')
+var mark = require('markdown-it-mark');
 // taskLists
-var taskLists = require('markdown-it-task-lists')
+var taskLists = require('markdown-it-task-lists');
 // container
-var container = require('markdown-it-container')
+var container = require('markdown-it-container');
 //
-var toc = require('markdown-it-toc')
+var toc = require('markdown-it-toc');
 // add target="_blank" to all link
 var defaultRender = markdown.renderer.rules.link_open || function(tokens, idx, options, env, self) {
     return self.renderToken(tokens, idx, options);
@@ -86,7 +86,7 @@ markdown.use(mihe, hljs_opts)
     .use(miip)
     .use(katex)
     .use(taskLists)
-    .use(toc)
+    .use(toc);
 
 export default {
     data() {
